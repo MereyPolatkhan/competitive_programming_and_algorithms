@@ -1,0 +1,7 @@
+n = 1: ()
+n = 2: (())  ()() 
+n = 3: ((())) ()()() (()()) (())() ()(())
+
+if N == close == open : DONE 
+else if open < N: add (
+else if close < open: add ) 

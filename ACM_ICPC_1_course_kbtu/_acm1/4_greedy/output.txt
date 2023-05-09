@@ -1,0 +1,16 @@
+
+count_of_teams: 10, m: 3
+cnt: 2
+
+count_of_teams: 4, m: 3
+cnt: 3
+
+count_of_teams: 7, m: 3
+cnt: 2
+
+count_of_teams: 5, m: 3
+cnt: 3
+
+count_of_teams: 6, m: 3
+cnt: 2
+5

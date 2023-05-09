@@ -1,0 +1,208 @@
+====== Test #1 =======
+--- Input: size 28 ---
+5 6
+1 3
+2 1
+3 5
+4 3
+5 4
+3 2
+
+--- Output: size 2 ---
+NO
+--- Correct: size 3 ---
+NO
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 16 ---
+ok answer is NO
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=5, rtime=6, maxvsz=6963200, maxrss=6316032, nvcsw=1, nivcsw=1 }
+checker: { utime=0, stime=3, ptime=3, rtime=4, maxvsz=31240192, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #2 =======
+--- Input: size 12 ---
+2 2
+1 2
+2 1
+
+--- Output: size 3 ---
+YES
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 17 ---
+ok answer is YES
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=4, rtime=5, maxvsz=3149824, maxrss=6316032, nvcsw=1, nivcsw=0 }
+checker: { utime=0, stime=3, ptime=3, rtime=3, maxvsz=17289216, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #3 =======
+--- Input: size 12 ---
+2 2
+1 1
+1 2
+
+--- Output: size 3 ---
+YES
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 17 ---
+ok answer is YES
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=4, rtime=5, maxvsz=3149824, maxrss=6316032, nvcsw=1, nivcsw=0 }
+checker: { utime=2, stime=0, ptime=2, rtime=3, maxvsz=17289216, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #4 =======
+--- Input: size 32 ---
+5 7
+1 2
+2 3
+3 1
+3 4
+4 1
+4 5
+5 1
+
+--- Output: size 3 ---
+YES
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 17 ---
+ok answer is YES
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=4, rtime=5, maxvsz=3149824, maxrss=6316032, nvcsw=1, nivcsw=0 }
+checker: { utime=3, stime=0, ptime=3, rtime=4, maxvsz=17387520, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #5 =======
+--- Input: size 28 ---
+6 6
+1 2
+2 3
+3 1
+4 5
+5 6
+6 3
+
+--- Output: size 3 ---
+YES
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 17 ---
+ok answer is YES
+
+--- Resource usage ---
+program: { utime=0, stime=3, ptime=4, rtime=4, maxvsz=3248128, maxrss=6316032, nvcsw=0, nivcsw=1 }
+checker: { utime=2, stime=0, ptime=2, rtime=3, maxvsz=17387520, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #6 =======
+--- Input: size 28 ---
+4 6
+2 3
+3 2
+3 4
+4 3
+4 2
+2 4
+
+--- Output: size 2 ---
+NO
+--- Correct: size 3 ---
+NO
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 16 ---
+ok answer is NO
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=4, rtime=5, maxvsz=3149824, maxrss=6316032, nvcsw=1, nivcsw=1 }
+checker: { utime=2, stime=0, ptime=2, rtime=3, maxvsz=17387520, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #7 =======
+--- Input: size 28 ---
+7 6
+2 3
+3 4
+4 2
+5 6
+6 7
+7 5
+
+--- Output: size 2 ---
+NO
+--- Correct: size 3 ---
+NO
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 16 ---
+ok answer is NO
+
+--- Resource usage ---
+program: { utime=4, stime=0, ptime=4, rtime=4, maxvsz=3248128, maxrss=6316032, nvcsw=1, nivcsw=0 }
+checker: { utime=2, stime=0, ptime=2, rtime=3, maxvsz=17289216, maxrss=6381568, nvcsw=1, nivcsw=0 }
+
+====== Test #8 =======
+--- Input: size 32 ---
+7 7
+1 3
+3 6
+3 7
+5 3
+6 2
+6 7
+7 2
+
+--- Output: size 3 ---
+YES
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 17 ---
+ok answer is YES
+
+--- Resource usage ---
+program: { utime=0, stime=4, ptime=4, rtime=5, maxvsz=3248128, maxrss=6316032, nvcsw=1, nivcsw=1 }
+checker: { utime=3, stime=0, ptime=3, rtime=4, maxvsz=17289216, maxrss=6381568, nvcsw=1, nivcsw=1 }
+
+====== Test #9 =======
+--- Input: size 40 ---
+7 9
+1 2
+2 3
+1 3
+3 4
+3 5
+5 6
+6 1
+6 7
+7 1
+
+--- Output: size 2 ---
+NO
+--- Correct: size 4 ---
+YES
+
+--- Stderr: size 0 ---
+
+--- Checker output: size 36 ---
+wrong answer expected YES, found NO

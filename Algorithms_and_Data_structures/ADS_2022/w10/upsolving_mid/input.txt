@@ -1,0 +1,6 @@
+5
+add 29704
+add 1837
+delete
+getmax
+getcur
