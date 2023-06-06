@@ -1,0 +1,1 @@
+searchh(a[i], b);

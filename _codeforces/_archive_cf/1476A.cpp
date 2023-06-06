@@ -3,19 +3,14 @@
 using namespace std;
 
 #define pb push_back
-#define fi first
-#define se second
 #define all(x) x.begin(), x.end()
-#define sz(x) (int)x.size()
-#define en '\n'
- 
+#define rall(x) x.rbegin(), x.rend()
   
 typedef long long ll;
 typedef pair<int, int> pii;
 
 
 void solve() {
-
     
 
 }
@@ -25,9 +20,8 @@ int main() {
     // freopen("output.txt", "w", stdout);
     ios::sync_with_stdio(0);
     cin.tie(0);
-    cout.tie(0);
 
-    int t;
+    int t = 1;
     cin >> t;
     while (t--) {
         solve();

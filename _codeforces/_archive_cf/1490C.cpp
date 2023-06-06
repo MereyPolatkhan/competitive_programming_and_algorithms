@@ -14,8 +14,7 @@ bool func(ll b) {
     if (b == 0) {
         return false;
     }
-    ll y = floor(cubic_root(b));
-
+    ll y = ceil(cubic_root(b));
     return y * y * y == b;
 }
 
@@ -25,7 +24,7 @@ void solve() {
     cin >> x;
 
     for (ll a = 1; a <= (ll)cubic_root(x); a++) {
-        if (func(x - a)) {
+        if (func(x - a * a * a)) {
             cout << "YES\n";
             return;
         }
@@ -38,9 +37,9 @@ void solve() {
 
 int main() {
 
-    // ios::sync_with_stdio(0);
-    // cin.tie(0);
-    // cout.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     
     ll t;
     cin >> t;
