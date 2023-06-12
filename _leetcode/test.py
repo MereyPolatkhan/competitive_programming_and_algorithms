@@ -1,2 +1,4 @@
-st = [1, 2, 3, 44]
-print(st.pop())
+print(("acacc" > "abacc"))
+print(("acacc" > "acabb"))
+
+print(("abacc" < "acabb"))

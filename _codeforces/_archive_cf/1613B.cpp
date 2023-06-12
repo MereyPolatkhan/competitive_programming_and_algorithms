@@ -11,14 +11,20 @@ typedef pair<int, int> pii;
 
 
 void solve() {
-    double n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
 
-    double cnt = ceil(n / k);
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
 
-    k = k * cnt;
+    sort(rall(a));
 
-    cout << (ll)ceil(k / n) << "\n";
+    for (int i = 0; i < n / 2; i++) {
+        cout << a[i] << " " << a[n - 1] << "\n";
+    }
+
 
 }
 

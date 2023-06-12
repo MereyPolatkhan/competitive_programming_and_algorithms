@@ -11,14 +11,25 @@ typedef pair<int, int> pii;
 
 
 void solve() {
-    double n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
 
-    double cnt = ceil(n / k);
+    string s;
+    cin >> s;
 
-    k = k * cnt;
+    string res = "";
+    char cur = s[0];
+    for (int i = 0; i < n; i++) {
+        cur = s[i];
+        i++;
+        res += cur;
+        while (s[i] != cur) {
+            i++;
+        }
+    }
 
-    cout << (ll)ceil(k / n) << "\n";
+    cout << res << "\n";
+
 
 }
 

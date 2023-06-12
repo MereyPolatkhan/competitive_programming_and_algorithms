@@ -11,22 +11,34 @@ typedef pair<int, int> pii;
 
 
 void solve() {
+    int n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    string res = "";
+    char cur = s[0];
+    for (int i = 0; i < n; i++) {
+        cur = s[i];
+        i++;
+        res += cur;
+        while (s[i] != cur) {
+            i++;
+        }
+    }
+
+    cout << res << "\n";
 
 
 }
 
 int main() {    
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    ios::sync_with_stdio(0);
-    cin.tie(0);
 
-    int t = 1;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
-
+    int l, r;
+    cin >> l >> r;
+    int m = (l + r) >> 1;
+    cout << m;
     return 0;
 }
 

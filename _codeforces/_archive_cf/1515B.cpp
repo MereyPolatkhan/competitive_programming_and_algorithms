@@ -9,16 +9,24 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 
+bool ch(int n, int x) {
+    if (n % x == 0) {
+        n = n / x;
+        return (int)pow((int)sqrt(n), 2) == n;
+    }
+    return false;
+}
 
 void solve() {
-    double n, k;
-    cin >> n >> k;
+    int n;
+    cin >> n;
 
-    double cnt = ceil(n / k);
-
-    k = k * cnt;
-
-    cout << (ll)ceil(k / n) << "\n";
+    if (ch(n, 2) || ch(n, 4)) {
+        cout << "YES\n";
+    }
+    else {
+        cout << "NO\n";
+    }
 
 }
 
