@@ -68,12 +68,47 @@ void SieveOfEratosthenes(int n) {
 }
   
 
-bool is_n_pow_of_2(int n) {
-    if (n == 0) return false;
-    return ((n - 1) & n) == 0;
+
+bool check(int i, int j) {
+    return __gcd(i, j * 2) > 1;
 }
 
+
 void solve() {
+
+    
+
+
+    int n;
+    cin >> n;
+
+    vector<int> b(n), a;
+
+    for (int i = 0; i < n; i++) {
+        cin >> b[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (b[i] % 2 == 0) {
+            a.pb(b[i]);
+        }
+    }
+    
+    
+    for (int i = 0; i < n; i++) {
+        if (b[i] % 2 == 1) {
+            a.pb(b[i]);
+        }
+    }
+
+    int res = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (check(a[i], a[j])) res++;
+        }
+    }
+
+    cout << res << "\n";
 
 }
 

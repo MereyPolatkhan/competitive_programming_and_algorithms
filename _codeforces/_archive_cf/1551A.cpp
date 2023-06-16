@@ -68,12 +68,37 @@ void SieveOfEratosthenes(int n) {
 }
   
 
-bool is_n_pow_of_2(int n) {
-    if (n == 0) return false;
-    return ((n - 1) & n) == 0;
-}
+
 
 void solve() {
+
+    
+
+
+
+    int n;
+    cin >> n;
+
+    int res = n / 3;
+    int remainder = n % 3;
+
+    if (remainder == 0) {
+        cout << res << " " << res << "\n";
+    }
+    else if (remainder == 1) {
+        cout << res + 1 << " " << res << "\n";
+    }
+    else {
+        cout << res << " " << res + 1 << "\n";
+    }
+
+
+
+
+
+
+
+
 
 }
 
