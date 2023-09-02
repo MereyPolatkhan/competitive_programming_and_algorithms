@@ -1,5 +1,53 @@
 class Solution {
 public:
+    int ctoi(char &c) {
+        return (int)c - (int)'a';
+    }
+
+    bool check(vector<int> &a, vector<int> &b) {
+        if (a.size() != b.size()) {
+            return false;
+        }
+        for (int i = 0; i < a.size(); i++) {
+            if (a[i] != b[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    vector<int> findAnagrams(string s, string p) {
+        vector<int> res;
+        if (s.size() < p.size()) 
+            return res;
+        
+        vector<int> a(26, 0);        
+        vector<int> b(26, 0);
+        
+
+        for (int i = 0; i < p.size(); i++) {
+            a[ctoi(s[i])]++;
+            b[ctoi(p[i])]++;
+        }
+        
+        if (check(a, b)) {
+            res.push_back(0);
+        }
+
+        for (int i = p.size(); i < s.size(); i++) {
+            a[ctoi(s[i - p.size()])]--;
+            a[ctoi(s[i])]++;
+            if (check(a, b)) {
+                res.push_back(i - p.size() + 1);
+            }
+        }
+        return res;
+
+    }
+};
+
+class Solution {
+public:
     vector<int> findAnagrams(string s, string p) {
         vector<int> res;
 

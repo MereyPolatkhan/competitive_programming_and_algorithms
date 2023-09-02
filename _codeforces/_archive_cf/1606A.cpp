@@ -10,60 +10,15 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> pii;
 
-bool calc(int &cnt) {
-    if (cnt > 0) {
-        cnt--;
-        return 1;
-    }
-    return 0;
-}
 
-string func(string &s, string t, int cnt) {
-    for (int i = 0; i < s.size() - 1; i++) {    
-        if (s[i] == t[0] and s[i + 1] == t[1]) {
-            if (i == 0) {
-                if (calc(cnt)) {
-                    s[i] = t[1];
-                }
-            }
-            else {
-                if (s[i - 1] != t[1]) {
-                    if (calc(cnt)) {
-                        s[i] = t[1];
-                    }
-                }
-            }
-        }
-    }
-    return s;
-}   
 
 
 void solve() {
     string s;
     cin >> s;
 
-    int ab = 0;
-    int ba = 0;
-
-    for (int i = 0; i < s.size() - 1; i++) {
-        if (s[i] == 'a' and s[i + 1] == 'b') {
-            ab++;
-        }
-        if (s[i] == 'b' and s[i + 1] == 'a') {
-            ba++;
-        }
-    }
-
-    if (ab == ba) {
-        cout << s << "\n";
-    }
-    else if (ab > ba) {
-        cout << func(s, "ab", ab - ba) << "\n";
-    }
-    else {
-        cout << func(s, "ba", ba - ab) << "\n";
-    }
+    s[0] = s.back();
+    cout << s << "\n";
 }
 
 int main() {    
