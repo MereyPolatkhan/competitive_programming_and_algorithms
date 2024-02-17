@@ -1,5 +1,23 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
+#include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
+#include <cmath>
+#include <cassert>
+#include <queue>
+#include <bitset>
+#include <numeric>
+#include <vector>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+ 
 using namespace std;
 
 #define pb push_back
@@ -10,66 +28,47 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef pair<int, int> pii;
 
-int it = 0;
+
 void solve() {
-    it++;
-    int n; ll s, sum = 0;
+    int n, s;
     cin >> n >> s;
-    
-    vector<int> a(n);
 
-    for (int i = 0; i < n; i++) {
+    vector<int> a(n + 1, 0);
+
+    for (int i = 1; i <= n; i++) {
         cin >> a[i];
-        sum += a[i];
     }
 
-    // cout << "ans: ";
-    if (sum == s) {
-        cout << 0 << "\n";
-        return;
+    for (int i = 2; i <= n; i++) {
+        a[i] += a[i - 1];
     }
-    int cnt = 0;
+    
+    int res = 1e9;
 
-    int i = 0, j = n - 1;
-    while (i < j) {
-        int l = i, r = j;
-        while (l < n and a[l] == 0) 
-            l++;
-        while (r >= 0 and a[r] == 0) {
-            r--;
+    for (int i = 1; i <= n; i++) {
+        int l = i, r = n;
+        int pos = -1;
+        while (l <= r) {
+            int mid = (l + r) / 2;
+            if (a[mid] - a[i - 1] <= s) {
+                pos = mid;
+                l = mid + 1;
+            }
+            else {
+                r = mid - 1;
+            }
         }
-
-        if (l - i <= j - r) {
-            cnt += l - i;
-            i = l;
-        }
-        else {
-            cnt += j - r;
-            j = r;
-        }
-
-
-        if (i < n and a[i] == 1) {
-            i++;
-            cnt++;
-            sum -= 1;
-        }
-        else if (j >= 0 and a[j] == 1) {
-            j--;
-            cnt++;
-            sum -= 1;
-        }
-
-        if (sum == s) {
-            cout << cnt << "\n";
-            return;
-        }
+        if (pos >= 1 and a[pos] - a[i - 1] == s)
+            res = min(res, i - 1 + n - pos);
     }
 
-    cout << -1 << "\n";
 
-    // cout << "\n\n\n";
-
+    if (res == 1e9) 
+        cout << -1 << "\n";
+    else 
+        cout << res << "\n";
+    
+    
 }
 
 /*  things to check:
@@ -79,12 +78,10 @@ void solve() {
     3) corner cases (n = 1, n = 0, etc.)
 */
 
-int main() {    
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    // ios::sync_with_stdio(false);
-    // cin.tie(nullptr);
-
+int main() { 
+    #ifdef LOCAL
+        freopen("input.txt", "r", stdin);
+    #endif
     int T = 1;
     cin >> T;
     while (T--) {

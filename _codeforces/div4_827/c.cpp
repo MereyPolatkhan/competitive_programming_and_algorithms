@@ -1,77 +1,80 @@
 #include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
+#include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
+#include <cmath>
+#include <cassert>
+#include <queue>
+#include <bitset>
+#include <numeric>
 #include <vector>
-
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+ 
 using namespace std;
 
-#define ll long long
+#define pb push_back
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+  
+typedef long long ll;
+typedef unsigned long long ull;
+typedef pair<int, int> pii;
+typedef unsigned short int usi;
 
+int it = 0;
 void solve() {
     int n = 8;
-    int m = 8;
-    char a[n][m];
+    int a[n][n];
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cin >> a[i][j];
-        }
-    }
-    int r;
-    int b;
-    for (int i = 0; i < n; i++) {
-        r = 0;
-        b = 0;
-        for (int j = 0; j < m; j++) {
-            if (a[i][j] == 'R') {
-                r++;
-            }
-            if (a[i][j] == 'B') {
-                b++;
-            }
-        }
-        if (r == 8) {
-            cout << "R\n";
-            return;
-        }
-        if (b == 8) {
-            cout << "B\n";
-            return;
+        for (int j = 0; j < n; j++) {
+            char c;
+            cin >> c;
+            if (c == '.') a[i][j] = 0;
+            else if (c == 'B') a[i][j] = 1;
+            else a[i][j] = 2;
         }
     }
 
-    
-    for (int j = 0; j < m; j++) {
-        r = 0;
-        b = 0;
-        for (int i = 0; i < n; i++) {
-            if (a[i][j] == 'R') {
-                r++;
-            }
-            if (a[i][j] == 'B') {
-                b++;
-            }
+    for (int i = 0; i < n; i++) {
+        int cnt = 0;
+        for (int j = 0; j < n; j++) {
+            if (a[j][i] == 1) 
+                cnt++;
         }
-        // cout << "r = " << r << "b == " << b << endl;
-        if (r == 8) {
-            cout << "R\n";
-            return;
-        }
-        if (b == 8) {
+        if (cnt == 8) {
             cout << "B\n";
             return;
         }
     }
-    
+    cout << "R\n";
 }
+/*  things to check:
+    !  freopen
+    !  clear & resize SET, MAP, VECTOR, etc. or write in local functions
+    1) long long    
+    2) array sizes
+    3) corner cases (n = 1, n = 0, etc.)
+*/
 
-int main() {
-    // freopen("input.txt", "r", stdin);
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int t;
-    cin >> t;
-    ll n;
-    while (t--){
+int main() { 
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    #endif
+    int T = 1;
+    cin >> T;
+    while (T--) {
         solve();
     }
+
     return 0;
 }
+
